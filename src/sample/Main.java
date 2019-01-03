@@ -44,7 +44,7 @@ public class Main extends Application {
     }
 
     private void fillSetup(VBox setup) {
-        //TODO FillSetup
+        //TODO FillSetup Ask Nick what to put there
 
     }
 
