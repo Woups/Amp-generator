@@ -1,0 +1,66 @@
+{% extends 'node_modules/gsk-popsugar-core/components/layout.njk' %}
+{% import 'node_modules/gsk-popsugar-core/components/socialShare/socialShare.njk' as socialShare with context %}
+{% import 'node_modules/gsk-popsugar-core/components/relatedArticle/relatedArticle.njk' as article with context %}
+
+{% set canonical = "{{originalUrl}}amp/__pageURL__" %}
+{% set title = "__pageTitle__" %}
+{% set description = "__pageDescription__" %}
+{% set thumbnail = "img/__pageURL__/__pageURL__-mobile.jpg" %}
+{% set thumbnailWidth = "480" %}
+{% set thumbnailHeight = "270" %}
+
+{% block content %}
+  <main class="container" id="page-content">
+
+    <article>
+
+      <header class="article-header">
+
+        <h1>__Heading1__</h1>
+
+        {{ socialShare.socialShare("__pageFullURL__", "__Heading1__") }}
+
+        <amp-img src="img/__pageURL__/__pageURL__.jpg"
+             alt="__Heading1__"
+             width="920"
+             height="518"
+             layout="responsive"
+             role="main"
+             srcset="img/__pageURL__/__pageURL__.jpg 920w,
+                     img/__pageURL__/__pageURL__-mobile.jpg 480w">
+        </amp-img>
+
+        <a href="{{originalUrl}}healthy-living/healthy-strong-teeth/" class="back-link">&lt; Back to the article list</a>
+
+      </header>
+
+
+
+
+
+
+
+
+
+
+
+
+    </article>
+
+    <aside id="related-articles">
+      <h2>Related articles</h2>
+      <div>
+        {{ article.relatedArticle("img/__pageURL__/__RA1-Image__",
+        "__RA1-Title__",
+        "__RA1-Link__" )}}
+        {{ article.relatedArticle("img/__pageURL__/__RA2-Image__",
+        "__RA2-Title__",
+        "__RA2-Link__" )}}
+        {{ article.relatedArticle("img/__pageURL__/__RA3-Image__",
+        "__RA3-Title__",
+        "__RA3-Link__" )}}
+      </div>
+    </aside>
+
+  </main>
+{% endblock %}

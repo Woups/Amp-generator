@@ -1,0 +1,35 @@
+{% extends 'node_modules/gsk-popsugar-core/components/layout.njk' %}
+{% import 'node_modules/gsk-popsugar-core/components/socialShare/socialShare.njk' as socialShare with context %}
+{% import 'node_modules/gsk-popsugar-core/components/relatedArticle/relatedArticle.njk' as article with context %}
+
+{% set canonical = "{{originalUrl}}amp/__pageURL__" %}
+{% set title = "__pageTitle__" %}
+{% set description = "__pageDescription__" %}
+{% set thumbnail = "img/__pageURL__/pronamel-5-things-to-spend-more-money-on-in-2019-mobile.jpg" %}
+{% set thumbnailWidth = "480" %}
+{% set thumbnailHeight = "270" %}
+
+{% block content %}
+  <main class="container" id="page-content">
+
+    <article>
+
+      <header class="article-header">
+
+        <h1>__Heading1__</h1>
+
+        {{ socialShare.socialShare("https://pronamel.com/amp/__pageURL__.html", "__Heading1__") }}
+
+        <amp-img src="img/__pageURL__/pronamel-5-things-to-spend-more-money-on-in-2019.jpg"
+             alt="__Heading1__"
+             width="920"
+             height="518"
+             layout="responsive"
+             role="main"
+             srcset="img/__pageURL__/pronamel-5-things-to-spend-more-money-on-in-2019.jpg 920w,
+                     img/__pageURL__/pronamel-5-things-to-spend-more-money-on-in-2019-mobile.jpg 480w">
+        </amp-img>
+
+        <a href="{{originalUrl}}healthy-living/healthy-strong-teeth/" class="back-link">&lt; Back to the article list</a>
+
+      </header>

@@ -1,0 +1,79 @@
+{% extends 'node_modules/gsk-popsugar-core/components/layout.njk' %}
+{% import 'node_modules/gsk-popsugar-core/components/socialShare/socialShare.njk' as socialShare with context %}
+{% import 'node_modules/gsk-popsugar-core/components/relatedArticle/relatedArticle.njk' as article with context %}
+
+{% set canonical = "{{originalUrl}}amp/healthy-choices-to-make-right-now.html" %}
+{% set title = "What to Spend MORE Money on in 2019" %}
+{% set description = "Put your money to good use this year by spending it on these things that will help you better yourself." %}
+{% set thumbnail = "img/healthy-choices-to-make-right-now/pronamel-5-things-to-spend-more-money-on-in-2019-mobile.jpg" %}
+{% set thumbnailWidth = "480" %}
+{% set thumbnailHeight = "270" %}
+
+{% block content %}
+  <main class="container" id="page-content">
+
+    <article>
+
+      <header class="article-header">
+
+        <h1>5 Things You Should Spend MORE Money on in 2019 </h1>
+
+        {{ socialShare.socialShare("https://pronamel.com/amp/things-you-should-spend-money-on.html", "5 Things You Should Spend MORE Money on in 2019 ") }}
+
+        <amp-img src="img/things-you-should-spend-money-on/pronamel-5-things-to-spend-more-money-on-in-2019.jpg"
+             alt="5 Things You Should Spend MORE Money on in 2019 "
+             width="920"
+             height="518"
+             layout="responsive"
+             role="main"
+             srcset="img/things-you-should-spend-money-on/pronamel-5-things-to-spend-more-money-on-in-2019.jpg 920w,
+                     img/healthy-choices-to-make-right-now/pronamel-5-things-to-spend-more-money-on-in-2019-mobile.jpg 480w">
+        </amp-img>
+
+        <a href="{{originalUrl}}healthy-living/healthy-strong-teeth/" class="back-link">&lt; Back to the article list</a>
+
+      </header>
+
+
+      <h2> 5 Things You Should Spend MORE Money on in 2019 </h2>
+      <h3>Put your money to good use this year by spending it on these things that will help you better yourself.</h3>
+
+      <p>This coming year, make a resolution to spend more on yourself and invest in the things that will make you look and feel your best! When you take your self-care seriously, not only will you look good, but you’ll feel good, too. Invest in small things that can make a big impact, so you can lead a healthier life in 2019. Here are a few ideas to get you started.</p>
+      <h2>What to Spend Money on This Year</h2>
+      <h3>1. Fitness goals</h3>
+      <p>Staying active is an important ingredient to any healthy lifestyle, and exercising on a regular basis can <a href="https://adaa.org/understanding-anxiety/related-illnesses/other-related-conditions/stress/physical-activity-reduces-st">reduce stress</a>. Look into joining a gym or a fitness club or taking a workout class — there’s no one-size-fits-all answer. If you invest in an activity you enjoy, you’re more likely to stick with it.</p>
+
+      <h3>2. Toothpaste</h3>
+      <p>Your smile is one of your best assets, so proactively protect your teeth to keep them healthy and strong. Even the healthiest foods, like tomatoes and berries, <a href="https://www.pronamel.us/healthy-living/nutrition-and-dental-health/acidic-fruits-tooth-enamel/">contain acid</a> that can cause erosion in your teeth. To prevent this, try a toothpaste like <a href="https://www.pronamel.us/">Pronamel</a> to reharden your precious enamel (when used twice a day) so you can keep that smile pristine.</p>
+
+      <h3>3. Fresh foods</h3>
+      <p>Incorporate more fresh, nonprocessed foods into your diet so your body can get the nutrients it needs to stay healthy. <a href="https://www.health.com/nutrition/eat-clean-give-up-processed-foods">Eliminating processed</a> foods will help fuel your day so you feel more energized. Buying foods like fruits, vegetables, whole grains, beans, and nuts is <a href="https://www.fruitsandveggiesmorematters.org/top-10-reasons-to-eat-more-fruits-and-vegetables">a great place to start</a>.</p>
+
+      <h3>4. Education</h3>
+      <p>Exercise your mind by brushing up on some knowledge or learning something new. Education is an investment in yourself, and it can further your career. Even if your school days are behind you, try taking a class to learn more about something that interests you.</p>
+
+      <h3>5. Moisturizers</h3>
+      <p>Your <a href="https://www.aad.org/public/kids/skin">skin is the largest organ</a> your body has, so it’s important to treat it with care. A good moisturizer can give your skin the <a href="https://www.webmd.com/beauty/features/moisturizers">antioxidants</a> it needs for a healthy glow. Choose a moisturizer that complements your <a href="https://www.webmd.com/beauty/features/moisturizers#2">skin type</a> to assist with dry, oily, or sensitive skin.</p>
+      <p>Start thinking about ways you can invest in yourself in 2019. Do what makes you feel good, and get ready to make this year your best one yet!</p>
+
+
+
+    </article>
+
+    <aside id="related-articles">
+      <h2>Related articles</h2>
+      <div>
+        {{ article.relatedArticle("img/things-you-should-spend-money-on/pronamel_holiday-beauty-tips_related.jpg",
+        "Holiday Beauty Tips That Will Help You Sparkle",
+        "https://www.pronamel.us/amp/holiday-beauty-tips.html" )}}
+        {{ article.relatedArticle("img/things-you-should-spend-money-on/related-article_healthy-choices-80-year-old-self-wants.jpg",
+        "6 Healthy Choices Your 80 Year Old Self Wants You to Make",
+        "https://www.pronamel.us/amp/healthy-choices-to-make-right-now.html " )}}
+        {{ article.relatedArticle("img/things-you-should-spend-money-on/related-article_one-thing-before-brushing.jpg",
+        "Most People Don’t Do This One Thing Before Brushing — Here’s Why You Should",
+        "https://www.pronamel.us/amp/one-thing-before-brushing.html" )}}
+      </div>
+    </aside>
+
+  </main>
+{% endblock %}

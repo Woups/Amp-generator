@@ -1,0 +1,20 @@
+
+    </article>
+
+    <aside id="related-articles">
+      <h2>Related articles</h2>
+      <div>
+        {{ article.relatedArticle("img/__pageURL__/__RA1-Image__",
+        "__RA1-Title__",
+        "__RA1-Link__" )}}
+        {{ article.relatedArticle("img/__pageURL__/__RA2-Image__",
+        "__RA2-Title__",
+        "__RA2-Link__" )}}
+        {{ article.relatedArticle("img/__pageURL__/__RA3-Image__",
+        "__RA3-Title__",
+        "__RA3-Link__" )}}
+      </div>
+    </aside>
+
+  </main>
+{% endblock %}
