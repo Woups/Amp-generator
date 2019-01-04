@@ -13,6 +13,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.regex.Pattern;
 
 public class Main extends Application {
 
@@ -61,7 +62,15 @@ public class Main extends Application {
         chooseFile.setOnAction(event -> {
             copyDeck = fileChooser.showOpenDialog(window);
             if (copyDeck != null) {
-                path.setText(copyDeck.getPath());
+                String fileName = copyDeck.getName();
+                if (!Pattern.matches("^\\w+\\.xlsx$" , fileName.trim())){
+                    System.out.println("Invalid file");
+                    //TODO invalid window, won't let you continue
+                    copyDeck = null;
+                }
+                else{
+                    path.setText(copyDeck.getPath());
+                }
             }
         });
 
