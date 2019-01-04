@@ -20,6 +20,7 @@ public class Main extends Application {
     Stage window;
     File copyDeck;
     FileChooser fileChooser = new FileChooser();
+    Button generate = new Button("Generate");
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -37,6 +38,7 @@ public class Main extends Application {
         fillSetup(setup);
 
         mainLayout.setTop(source);
+        mainLayout.setLeft(setup);
 
 
         Scene scene = new Scene(mainLayout, 600, 400);
@@ -46,7 +48,20 @@ public class Main extends Application {
 
     private void fillSetup(VBox setup) {
         //TODO FillSetup Ask Nick what to put there
+        HBox chooseColumn = new HBox();
+        Label column = new Label("Column");
+        TextField columnPicker = new TextField();
+        chooseColumn.getChildren().addAll(column, columnPicker);
 
+        generate.setDisable(true);
+
+        generate.setOnAction(actionEvent -> generateAMPFile(copyDeck));
+
+        setup.getChildren().addAll(chooseColumn, generate);
+
+    }
+
+    private void generateAMPFile(File copyDeck) {
     }
 
     private void fillHbox(HBox source) {
@@ -64,12 +79,13 @@ public class Main extends Application {
             if (copyDeck != null) {
                 String fileName = copyDeck.getName();
                 if (!Pattern.matches("^\\w+\\.xlsx$" , fileName.trim())){
-                    System.out.println("Invalid file");
-                    //TODO invalid window, won't let you continue
+                    WarningWindow.display("incorrect format", "This file format is not possible to use\n please use .xlsx");
                     copyDeck = null;
+                    generate.setDisable(true);
                 }
                 else{
                     path.setText(copyDeck.getPath());
+                    generate.setDisable(false);
                 }
             }
         });
