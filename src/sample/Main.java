@@ -17,21 +17,21 @@ import java.util.regex.Pattern;
 
 public class Main extends Application {
 
-    Stage window;
-    File copyDeck;
-    FileChooser fileChooser = new FileChooser();
-    Button generate = new Button("Generate");
+    private Stage window;
+    private File copyDeck;
+    private FileChooser fileChooser = new FileChooser();
+    private Button generate = new Button("Generate");
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         window = primaryStage;
-        window.setTitle("AMPgen");
+        window.setTitle("AMP generator");
 
         BorderPane mainLayout = new BorderPane();
 
 
         HBox source = new HBox();
-        fillHbox(source);
+        fillHBox(source);
         source.setAlignment(Pos.CENTER);
 
         VBox setup = new VBox();
@@ -47,7 +47,7 @@ public class Main extends Application {
     }
 
     private void fillSetup(VBox setup) {
-        //TODO FillSetup Ask Nick what to put there
+
         HBox chooseColumn = new HBox();
         Label column = new Label("Column");
         TextField columnPicker = new TextField();
@@ -62,19 +62,21 @@ public class Main extends Application {
     }
 
     private void generateAMPFile(File copyDeck) {
+        //TODO create AMP file from the Brief
     }
 
-    private void fillHbox(HBox source) {
-        Label copyDeckSource = new Label("source: ");
+    private void fillHBox(HBox source) {
+        Label copyDeckSourceLabel = new Label("source: ");
 
-        TextField path = new TextField();
+        TextField pathToBrief = new TextField();
         if (copyDeck != null) {
-            path.setText(copyDeck.getPath());
+            pathToBrief.setText(copyDeck.getPath());
         }
-        path.setPrefWidth(300);
+        pathToBrief.setPrefWidth(300);
 
-        Button chooseFile = new Button("open");
-        chooseFile.setOnAction(event -> {
+        Button chooseFileButton = new Button("open");
+
+        chooseFileButton.setOnAction(event -> {
             copyDeck = fileChooser.showOpenDialog(window);
             if (copyDeck != null) {
                 String fileName = copyDeck.getName();
@@ -84,14 +86,13 @@ public class Main extends Application {
                     generate.setDisable(true);
                 }
                 else{
-                    path.setText(copyDeck.getPath());
+                    pathToBrief.setText(copyDeck.getPath());
                     generate.setDisable(false);
                 }
             }
         });
 
-
-        source.getChildren().addAll(copyDeckSource, path, chooseFile);
+        source.getChildren().addAll(copyDeckSourceLabel, pathToBrief, chooseFileButton);
     }
 
 
